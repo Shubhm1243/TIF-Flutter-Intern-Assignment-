@@ -58,6 +58,27 @@ class _SearchPageState extends State<SearchPage> {
     }).toList();
   }
 
+  String formatDate(DateTime dateTime) {
+    final day = dateTime.day.toString();
+    final month = DateFormat.MMM().format(dateTime);
+    final weekday = DateFormat.E().format(dateTime);
+    final time = DateFormat.jm().format(dateTime);
+
+    String daySuffix;
+    if (day.endsWith('1') && day != '11') {
+      daySuffix = 'st';
+    } else if (day.endsWith('2') && day != '12') {
+      daySuffix = 'nd';
+    } else if (day.endsWith('3') && day != '13') {
+      daySuffix = 'rd';
+    } else {
+      daySuffix = 'th';
+    }
+
+    return '$day$daySuffix $month - $weekday - $time';
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -163,58 +184,31 @@ class _SearchPageState extends State<SearchPage> {
               const SizedBox(
                 width: 10,
               ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      DateFormat('E, MMM d • h:mm a').format(event.dateTime),
-                      style: GoogleFonts.inter(
-                        fontWeight: FontWeight.w400,
-                        color: const Color(0xff5668ff),
-                      ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    formatDate(event.dateTime),
+                    style: GoogleFonts.inter(
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xff5668ff),
                     ),
-                    Text(
-                      event.title,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
-                      // style: TextStyle(fontWeight: FontWeight.w500,color: Color(0xff110c26),),
-                      style: GoogleFonts.inter(
-                          fontWeight: FontWeight.w500,
-                          color: const Color(0xff110c26),
-                          fontSize: 18),
-                    ),
-                    Wrap(
-                      children: [
-                        const Icon(
-                          Icons.location_on,
-                          color: Color(0xff747688),
-                          size: 20,
-                        ),
-                        Text(
-                          '${event.venueName} •',
-                          overflow: TextOverflow.fade,
-                          maxLines: 1,
-                          style: GoogleFonts.inter(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xff747688),
-                          ),
-                        ),
-                        Text('${event.venueCity}, ${event.venueCountry}',
-                            overflow: TextOverflow.fade,
-                            maxLines: 1,
-                            style: GoogleFonts.inter(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xff747688),
-                            )),
-                      ],
-                    ),
-                  ],
-                ),
-              )
+                  ),
+
+                  const SizedBox(height: 10,),
+
+                  Text(
+                    event.title,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        color: const Color(0xff110c26),
+                        fontSize: 18),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

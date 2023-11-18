@@ -130,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         .format(event.dateTime),
                                     style: GoogleFonts.inter(
                                       fontWeight: FontWeight.w400,
-                                      color: const Color(0xff5668ff),
+                                      color: const Color(0xff5669ff),
                                     ),
                                   ),
                                   const SizedBox(
