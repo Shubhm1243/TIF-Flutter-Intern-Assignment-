@@ -64,6 +64,7 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                     'Event Details',
                     style: GoogleFonts.inter(
                         color: const Color(0xffffffff),
+                        fontSize: 24,
                         fontWeight: FontWeight.w500),
                   ),
                   expandedHeight: 200, // Adjust the height as needed
@@ -99,7 +100,7 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                         Text(
                           widget.event.title,
                           style: GoogleFonts.inter(
-                              color: const Color(0xff110c26),
+                              color: const Color(0xff120D26),
                               fontWeight: FontWeight.w400,
                               fontSize: 35),
                         ),
@@ -109,7 +110,7 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                         Row(
                           children: [
                             SizedBox(
-                              height: 65,
+                              height: 61,
                               width: 65,
                               child: getImageWidget(widget.event.organiserIcon),
                             ),
@@ -126,12 +127,13 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                                     style: GoogleFonts.inter(
                                         color: const Color(0xff0d0c26),
                                         fontWeight: FontWeight.w400,
-                                        fontSize: 18),
+                                        fontSize: 15),
                                   ),
                                   Text(
                                     'Organizer',
                                     style: GoogleFonts.inter(
                                         color: const Color(0xff6f6e8f),
+                                        fontSize: 12,
                                         fontWeight: FontWeight.w400),
                                   ),
                                 ],
@@ -170,14 +172,15 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                                   // .format(event.dateTime),
                                   style: GoogleFonts.inter(
                                     fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xff110c26),
+                                    fontWeight: FontWeight.w500,
+                                    color: const Color(0xff120D26),
                                   ),
                                 ),
                                 Text(
                                   '${DateFormat('EEEE, h:mm a').format(widget.event.dateTime)} - ${DateFormat('h:mm a').format(widget.event.dateTime.add(const Duration(hours: 5)))}',
                                   style: const TextStyle(
                                     fontWeight: FontWeight.w400,
+                                    fontSize: 12,
                                     color: Color(0xff747688),
                                   ),
                                 )
@@ -216,8 +219,8 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                                     overflow: TextOverflow.fade,
                                     style: GoogleFonts.inter(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: const Color(0xff110c26),
+                                      fontWeight: FontWeight.w500,
+                                      color: const Color(0xff120D26),
                                     ),
                                   ),
                                   const SizedBox(height: 4),
@@ -227,6 +230,7 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                                     maxLines: 1,
                                     style: const TextStyle(
                                       fontWeight: FontWeight.w400,
+                                      fontSize: 12,
                                       color: Color(0xff747688),
                                     ),
                                   )
@@ -241,14 +245,12 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                         Text(
                           'About Event',
                           style: GoogleFonts.inter(
-                              color: const Color(0xff110c26), fontSize: 24),
+                              color: const Color(0xff120D26),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500),
                         ),
-                        // Text(
-                        //   event.description,
-                        //   style: GoogleFonts.inter(color: const Color(0xff110c26)),
-                        // ),
                         Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.only(top: 10),
                           child: Text.rich(
                             TextSpan(
                               children: [
@@ -256,15 +258,19 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                                   text: getLimitedDescription(
                                       widget.event.description),
                                   style: GoogleFonts.inter(
-                                      color: const Color(0xff110c26)),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400,
+                                    color: const Color(0xff120D26),
+                                  ),
                                 ),
                                 if (widget.event.description.split(' ').length >
                                     maxWords)
                                   TextSpan(
-                                    text:
-                                        isExpanded ? ' Read less...' : ' Read more...',
+                                    text: isExpanded
+                                        ? ' Read less...'
+                                        : ' Read more...',
                                     style: const TextStyle(
-                                      color: Colors.blue,
+                                      color: Color(0xFF5669FF),
                                       fontWeight: FontWeight.bold,
                                     ),
                                     recognizer: TapGestureRecognizer()
@@ -278,7 +284,6 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                             ),
                           ),
                         ),
-
                         const SizedBox(
                           height: 30,
                         ),
@@ -294,7 +299,7 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                                   blurRadius: 17.5,
                                 ),
                               ],
-                              color: const Color(0xff5668ff),
+                              color: const Color(0xff5669ff),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: TextButton(
@@ -309,7 +314,7 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                                       textAlign: TextAlign.center,
                                       style: GoogleFonts.inter(
                                         color: const Color(0xffffffff),
-                                        fontWeight: FontWeight.bold,
+                                        fontWeight: FontWeight.w500,
                                         fontSize: 16,
                                       ),
                                     ),
@@ -320,12 +325,12 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                                     decoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(100),
-                                        color: Color(0xFF3D54F1)),
+                                        color: const Color(0xFF3D56F0)),
                                     child: const Icon(
                                       Icons.arrow_forward_rounded,
                                       color: Color(0xffffffff),
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),

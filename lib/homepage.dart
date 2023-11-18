@@ -16,6 +16,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   late Future<List<Datum>> _eventsFuture;
+
   // late List<Datum> _allEvents = [];
 
   @override
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
             'Events',
             style: GoogleFonts.inter(
               fontWeight: FontWeight.w500,
-              color: const Color(0xff110c26),
+              color: const Color(0xff120D26),
             ),
           ),
         ),
@@ -106,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: 100,
                               height: 108,
                               child: Container(
-                                height: 100,
+                                height: 106,
                                 width: 108,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
@@ -130,7 +131,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                         .format(event.dateTime),
                                     style: GoogleFonts.inter(
                                       fontWeight: FontWeight.w400,
-                                      color: const Color(0xff5669ff),
+                                      fontSize: 13,
+                                      color: const Color(0xff5669FF),
                                     ),
                                   ),
                                   const SizedBox(
@@ -142,8 +144,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     maxLines: 2,
                                     style: GoogleFonts.inter(
                                         fontWeight: FontWeight.w500,
-                                        color: const Color(0xff110c26),
-                                        fontSize: 18),
+                                        color: const Color(0xff120D26),
+                                        fontSize: 15),
                                   ),
                                   const SizedBox(
                                     height: 7,
@@ -166,14 +168,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                       ),
                                       Text(
-                                          '${event.venueCity}, ${event.venueCountry}',
-                                          overflow: TextOverflow.fade,
-                                          maxLines: 1,
-                                          style: GoogleFonts.inter(
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.w400,
-                                            color: const Color(0xff747688),
-                                          )),
+                                        '${event.venueCity}, ${event.venueCountry}',
+                                        overflow: TextOverflow.fade,
+                                        maxLines: 1,
+                                        style: GoogleFonts.inter(
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w400,
+                                          color: const Color(0xff747688),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ],
