@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:task_sde/widgets/custom_button.dart';
 import 'model/content.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -287,54 +288,8 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                         const SizedBox(
                           height: 30,
                         ),
-                        Center(
-                          child: Container(
-                            height: 58,
-                            width: 271,
-                            decoration: BoxDecoration(
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Color(0x3f6f7ec8),
-                                  offset: Offset(0, 10),
-                                  blurRadius: 17.5,
-                                ),
-                              ],
-                              color: const Color(0xff5669ff),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: TextButton(
-                              onPressed: () {},
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      'BOOK NOW',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.inter(
-                                        color: const Color(0xffffffff),
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    height: 30,
-                                    width: 30,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        color: const Color(0xFF3D56F0)),
-                                    child: const Icon(
-                                      Icons.arrow_forward_rounded,
-                                      color: Color(0xffffffff),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
+                        const Center(
+                          child: CustomButton(),
                         ),
                       ],
                     ),
