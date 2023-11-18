@@ -10,7 +10,8 @@ class EventDetailScreen extends StatefulWidget {
   final Datum event;
   final maxWords = 10;
 
-  const EventDetailScreen({Key? key, required this.event}) : super(key: key);
+
+  const EventDetailScreen({Key? key, required this.event,}) : super(key: key);
 
   @override
   State<EventDetailScreen> createState() => _EventDetailScreenState();

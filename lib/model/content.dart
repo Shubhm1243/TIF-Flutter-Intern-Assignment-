@@ -1,52 +1,3 @@
-import 'dart:convert';
-
-// class Temperatures {
-//   Content content;
-//   bool status;
-//
-//   Temperatures({
-//     required this.content,
-//     required this.status,
-//   });
-//
-//   factory Temperatures.fromRawJson(String str) => Temperatures.fromJson(json.decode(str));
-//
-//   String toRawJson() => json.encode(toJson());
-//
-//   factory Temperatures.fromJson(Map<String, dynamic> json) => Temperatures(
-//     content: Content.fromJson(json["content"]),
-//     status: json["status"],
-//   );
-//
-//   Map<String, dynamic> toJson() => {
-//     "content": content.toJson(),
-//     "status": status,
-//   };
-// }
-//
-// class Content {
-//   List<Datum> data;
-//   Meta meta;
-//
-//   Content({
-//     required this.data,
-//     required this.meta,
-//   });
-//
-//   factory Content.fromRawJson(String str) => Content.fromJson(json.decode(str));
-//
-//   String toRawJson() => json.encode(toJson());
-//
-//   factory Content.fromJson(Map<String, dynamic> json) => Content(
-//     data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
-//     meta: Meta.fromJson(json["meta"]),
-//   );
-//
-//   Map<String, dynamic> toJson() => {
-//     "data": List<dynamic>.from(data.map((x) => x.toJson())),
-//     "meta": meta.toJson(),
-//   };
-// }
 
 class Datum {
   int id;
@@ -73,9 +24,6 @@ class Datum {
     required this.venueCountry,
   });
 
-  // factory Datum.fromRawJson(String str) => Datum.fromJson(json.decode(str));
-
-  // String toRawJson() => json.encode(toJson());
 
   factory Datum.fromJson(Map<String, dynamic> json) {
     return Datum(
@@ -92,36 +40,4 @@ class Datum {
     );
   }
 
-  // Map<String, dynamic> toJson() => {
-  //   "id": id,
-  //   "title": title,
-  //   "description": description,
-  //   "banner_image": bannerImage,
-  //   "date_time": dateTime.toIso8601String(),
-  //   "organiser_name": organiserName,
-  //   "organiser_icon": organiserIcon,
-  //   "venue_name": venueName,
-  //   "venue_city": venueCity,
-  //   "venue_country": venueCountry,
-  // };
-}
-
-class Meta {
-  int total;
-
-  Meta({
-    required this.total,
-  });
-
-  factory Meta.fromRawJson(String str) => Meta.fromJson(json.decode(str));
-
-  String toRawJson() => json.encode(toJson());
-
-  factory Meta.fromJson(Map<String, dynamic> json) => Meta(
-    total: json["total"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "total": total,
-  };
 }

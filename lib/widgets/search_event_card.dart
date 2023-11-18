@@ -9,6 +9,7 @@ class SearchEventCard extends StatelessWidget {
 
   const SearchEventCard({required this.event, Key? key}) : super(key: key);
 
+
   String formatDate(DateTime dateTime) {
     final day = dateTime.day.toString();
     final month = DateFormat.MMM().format(dateTime).toUpperCase();
@@ -34,7 +35,7 @@ class SearchEventCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => EventDetailScreen(event: event),
+          builder: (context) => EventDetailScreen(event: event, ),
         ));
       },
       child: Padding(

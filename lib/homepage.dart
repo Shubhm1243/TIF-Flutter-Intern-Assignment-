@@ -1,9 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:intl/intl.dart';
 import 'package:task_sde/event_details.dart';
-import 'package:task_sde/seacrh_screen.dart';
+import 'package:task_sde/search_screen.dart';
 import 'package:task_sde/widgets/event_card.dart';
 import 'model/content.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -84,17 +83,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) {
                   var event = snapshot.data![index];
-                  // return ListTile(
-                  //   leading: Image.network(event.bannerImage),
-                  //   title: Text(event.title),
-                  //   subtitle: Text('${event.venueName}, ${event.venueCity}'),
-                  //   // Add more details here as needed
-                  // );
                   return GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) =>
-                              EventDetailScreen(event: event)));
+                              EventDetailScreen(event: event,)));
                     },
                     child: EventCard(event: event,)
 

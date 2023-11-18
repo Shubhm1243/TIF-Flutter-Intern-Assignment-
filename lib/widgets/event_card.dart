@@ -13,8 +13,13 @@ class EventCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => EventDetailScreen(event: event)));
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => EventDetailScreen(
+              event: event,
+            ),
+          ),
+        );
       },
       child: Card(
         color: Colors.white,
